@@ -2,15 +2,16 @@ import { getApolloClient } from './apollo-client';
 
 import parameterize from 'parameterize';
 
-import { QUERY_ALL_USERS, QUERY_ALL_USERS_SEO } from 'data/users';
+import { QUERY_ALL_USERS, QUERY_ALL_USERS_SEO } from '../data/users';
 
+import userProps from '../interfaces/userInterface';
 // const ROLES_AUTHOR = ['author', 'administrator'];
 
 /**
  * postPathBySlug
  */
 
-export function authorPathBySlug(slug) {
+export function authorPathBySlug(slug: string) {
   return `/authors/${slug}`;
 }
 
@@ -18,7 +19,7 @@ export function authorPathBySlug(slug) {
  * getUserBySlug
  */
 
-export async function getUserBySlug(slug) {
+export async function getUserBySlug(slug: string) {
   const { users } = await getAllUsers();
 
   const user = users.find((user) => user.slug === slug);
@@ -32,7 +33,7 @@ export async function getUserBySlug(slug) {
  * authorPathByName
  */
 
-export function authorPathByName(name) {
+export function authorPathByName(name: string) {
   return `/authors/${parameterize(name)}`;
 }
 
@@ -40,10 +41,10 @@ export function authorPathByName(name) {
  * getUserByNameSlug
  */
 
-export async function getUserByNameSlug(name) {
+export async function getUserByNameSlug(name: string) {
   const { users } = await getAllUsers();
 
-  const user = users.find((user) => parameterize(user.name) === name);
+  const user = users.find((user: userProps) => parameterize(user.name) === name);
 
   return {
     user,
@@ -54,7 +55,7 @@ export async function getUserByNameSlug(name) {
  * userSlugByName
  */
 
-export function userSlugByName(name) {
+export function userSlugByName(name: string) {
   return parameterize(name);
 }
 
@@ -65,14 +66,14 @@ export function userSlugByName(name) {
 export async function getAllUsers() {
   const apolloClient = getApolloClient();
 
-  let usersData;
-  let seoData;
+  let usersData:any;
+  let seoData: any;
 
   try {
     usersData = await apolloClient.query({
       query: QUERY_ALL_USERS,
     });
-  } catch (e) {
+  } catch (e:any) {
     console.log(`[users][getAllUsers] Failed to query users data: ${e.message}`);
     throw e;
   }
