@@ -189,6 +189,11 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-18.7.18.tgz#633184f55c322e4fb08612307c274ee6d5ed3154"
   integrity sha512-m+6nTEOadJZuTPkKR/SYK3A2d7FZrgElol9UP1Kae90VVU4a6mxnPuLiIW1m4Cq4gZ/nWb9GrdVXJCoCazDAbg==
 
+"@types/parameterize@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@types/parameterize/-/parameterize-1.0.1.tgz#667973e1caef1479d0ab8e09775c1b4625161a7c"
+  integrity sha512-A+BhYIERE2rAGiXEaZcSliKO/YPSm8VHN9WeHjVXpmyuHNQ9sgYkD7v70D89pFJbiOCjGeSMBNVk1VxhomrFAg==
+
 "@types/prop-types@*":
   version "15.7.5"
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.5.tgz#5f19d2b85a98e9558036f6a3cacc8819420f05cf"

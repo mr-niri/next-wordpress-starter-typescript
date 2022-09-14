@@ -1,4 +1,4 @@
-import { getApolloClient } from 'lib/apollo-client';
+import { getApolloClient } from './apollo-client';
 
 import parameterize from 'parameterize';
 
